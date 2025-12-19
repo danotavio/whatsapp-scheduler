@@ -12,9 +12,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1",
+    "@prisma/client": "^7.2.0",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.2",
     "jsonwebtoken": "^9.0.3",
     "playwright": "^1.57.0"
+  },
+  "devDependencies": {
+    "prisma": "^7.2.0"
   }
 }
-
