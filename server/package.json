@@ -1,0 +1,20 @@
+{
+  "name": "whatsapp-scheduler-server",
+  "version": "1.0.0",
+  "description": "Backend API & Automation Service for WhatsApp Message Scheduler MVP",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "playwright": "^1.57.0"
+  }
+}
+

@@ -1,0 +1,10 @@
+node_modules
+.env
+
+# Playwright / WhatsApp sessions
+server/src/automation/sessions
+server/node_modules
+client/node_modules
+
+# Logs
+*.log

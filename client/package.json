@@ -1,0 +1,19 @@
+{
+  "name": "whatsapp-scheduler-client",
+  "version": "1.0.0",
+  "description": "Chrome Extension client for WhatsApp Message Scheduler MVP",
+  "type": "module",
+  "scripts": {
+    "build": "echo \"Build script - compile popup.jsx to popup.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {}
+}
+
