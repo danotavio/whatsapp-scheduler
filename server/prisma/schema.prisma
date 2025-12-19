@@ -11,40 +11,32 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url = env("DATABASE_URL")
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
+  id        Int       @id @default(autoincrement())
+  username  String    @unique
   password  String
-  createdAt DateTime @default(now())
-
-  messages  ScheduledMessage[]
+  createdAt DateTime  @default(now())
+  messages  Message[]
 }
 
-model ScheduledMessage {
-  id               Int      @id @default(autoincrement())
-  userId           Int
-  contactName      String
-  phoneNumber      String
-  messageContent   String
-  scheduledAt      DateTime
-  status           MessageStatus @default(SCHEDULED)
-  sentAt           DateTime?
+model Message {
+  id          Int       @id @default(autoincrement())
+  userId      Int
+  contactName String
+  phoneNumber String
+  content     String
+  sendAt      DateTime
+  status      MessageStatus @default(SCHEDULED)
+  createdAt   DateTime @default(now())
 
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@index([userId])
-  @@index([scheduledAt])
+  user User @relation(fields: [userId], references: [id])
 }
 
 enum MessageStatus {
   SCHEDULED
   SENT
-  FAILED
   CANCELED
+  FAILED
 }
