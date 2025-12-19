@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const { scheduleMessage, getScheduledMessages, cancelMessage, startScheduler } = require('./scheduler');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const JWT_SECRET = 'super-secret-key-for-mvp'; // **WARNING: Replace with a secure, long, environment variable in production**
 
 app.use(bodyParser.json());
