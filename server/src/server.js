@@ -1,15 +1,22 @@
-const express = require('express');
+const http = require('http');
 
-const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok' });
+const server = http.createServer((req, res) => {
+  if (req.url === '/health') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ status: 'ok' }));
+    return;
+  }
+
+  res.writeHead(404);
+  res.end();
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server listening on port ${PORT}`);
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`HTTP server listening on port ${PORT}`);
 });
+
 
 
 // const express = require('express');
