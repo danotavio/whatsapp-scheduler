@@ -21,7 +21,12 @@ const PORT = process.env.PORT || 3000;
  * - mover para variável de ambiente
  * - usar segredo longo
  */
-const JWT_SECRET = process.env.JWT_SECRET || 'super-secret-key-for-mvp';
+
+const JWT_SECRET = process.env.JWT_SECRET;
+
+if (!JWT_SECRET) {
+  throw new Error('JWT_SECRET is not defined');
+}
 
 app.use(bodyParser.json());
 
