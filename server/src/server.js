@@ -109,7 +109,7 @@ app.post('/api/messages/cancel/:id', authenticateToken, (req, res) => {
 });
 
 // --- Start Server and Scheduler ---
-app.listen(PORT, () => {
-  console.log(`Backend API running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Backend API running on port ${PORT}`);
   startScheduler(messages); // Start the job scheduler
 });
