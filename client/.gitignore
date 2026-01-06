@@ -1,0 +1,5 @@
+node_modules/
+popup.js
+.DS_Store
+*.log
+

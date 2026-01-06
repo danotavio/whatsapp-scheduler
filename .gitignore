@@ -1,10 +1,31 @@
-node_modules
+# Dependencies
+node_modules/
+server/node_modules/
+client/node_modules/
+
+# Environment variables
 .env
+server/.env
+*.env.local
 
 # Playwright / WhatsApp sessions
-server/src/automation/sessions
-server/node_modules
-client/node_modules
+server/src/automation/sessions/
 
 # Logs
 *.log
+npm-debug.log*
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
